@@ -1,0 +1,37 @@
+{
+	"root": true,
+	"ignorePatterns": ["*.min.js"],
+	"overrides": [
+		{
+			"files": ["*.js"],
+			"env": {
+				"browser": true
+			}
+		},
+		{
+			"files": ["*.html"],
+			"plugins": ["tailwindcss"],
+			"extends": ["plugin:tailwindcss/recommended"],
+			"rules": {
+				"tailwindcss/migration-from-tailwind-2": "off",
+				"tailwindcss/no-custom-classname": [
+					"warn",
+					{
+						"config": "./tailwind/tailwind.config.js",
+						"whitelist": ["(page|entry)\\-([a-z]*)"]
+					}
+				],
+				"indent": ["error", 4, { "SwitchCase": 1 }],
+				"space-before-function-paren": ["error"],
+				"space-in-parens": ["error"]
+			},
+			"settings": {
+				"tailwindcss": {
+					"config": "./tailwind/tailwind.config.js",
+					"cssFiles": ["./public/**/*.css"],
+					"officialSorting": true
+				}
+			}
+		}
+	]
+}

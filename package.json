@@ -1,0 +1,30 @@
+{
+  "name": "pinefrontend",
+  "description": "Use Case for Pine Tech",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "development:tailwind:frontend": "npx tailwindcss --postcss -i ./src/css/main.css -c ./tailwind.config.js -o ./dist/css/style.css",
+    "development:esbuild": "npx esbuild ./src/js/main.js --target=esnext --bundle --outfile=./dist/js/script.js",
+    "development": "run-p development:**",
+    "dev": "npm run development",
+    "production:tailwind:frontend": "npm run development:tailwind:frontend -- --minify",
+    "production:esbuild": "npm run development:esbuild -- --minify",
+    "production": "run-p production:**",
+    "prod": "npm run production",
+    "watch:tailwind:frontend": "npm run development:tailwind:frontend -- --watch",
+    "watch:esbuild": "npm run development:esbuild -- --watch",
+    "watch": "run-p watch:**"
+  },
+  "devDependencies": {
+    "gsap": "file:gsap-bonus.tgz",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.30",
+    "tailwindcss": "^3.3.3",
+    "esbuild": "^0.15.7",
+    "eslint-plugin-tailwindcss": "^3.6.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-simple-vars": "^7.0.0",
+    "@tailwindcss/typography": "^0.5.9"
+  }
+}

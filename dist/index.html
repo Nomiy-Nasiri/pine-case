@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pine Frontend Case</title>
+    <meta name="description" content="Show us your best stuff!" />
+
+    <link
+      rel="preload"
+      href="./fonts/Cadiz-Bold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Cadiz-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="preload"
+      href="./css/style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="./css/style.css" /></noscript>
+  </head>
+
+  <body class="overflow-x-hidden bg-darkblue">
+    <!-- your html goes here -->
+    <section>
+      <div class="main px-[70px] py-[30px] h-screen">
+        <div
+          class="flex items-start relative justify-between bg-transparent h-full"
+          style="
+            background-image: url('./images/flying-cards.png');
+            background-size: contain;
+            background-position: right;
+            background-repeat: no-repeat;
+          "
+        >
+          <div class="logo sticky top-0 z-10 w-full bg-opacity-80 p-4"></div>
+          <div
+            class="absolute top-0 bottom-0 right-0 left-0"
+            style="
+              background-image: url('./images/flying-coins.png');
+              background-size: contain;
+              background-position: right;
+              background-repeat: no-repeat;
+            "
+          >
+            <div>
+              <img src="./images/logo.svg" alt="#" />
+            </div>
+            <div class="flex justify-between items-center flex-wrap">
+              <div class="py-6">
+                <h1
+                  class="text-4xl py-4"
+                  style="
+                    background: linear-gradient(45deg, #fc8946, #fa268d);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    display: inline-block;
+                  "
+                >
+                  $100.000 GTD
+                </h1>
+                <p class="text-white text-3xl py-4">
+                  Kwalificeer je in <br />
+                  december al anaf $1!
+                </p>
+                <p class="text-white text-center py-4">finale junary 2024</p>
+                <button
+                  class="text-uppercase p-4 rounded text-white w-[400px] py-4"
+                  style="background: linear-gradient(45deg, #fc8946, #fa268d)"
+                >
+                  SPEEL MEE!
+                </button>
+              </div>
+              <div class="max-w-[540px]">
+                <img src="./images/kv-logo.png" alt="#" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <div class="footer">
+            <p class="text-white text-center py-4">
+              promotieelname wat kost gokenjou? stop op tijd 18+
+            </p>
+          </div>
+          
+        </div>
+      </div>
+      <div class="flex justify-end relative">
+        <img class="" style=" position: absolute; bottom: -26px;" src="./images/corner.svg" alt="" />
+      </div>
+    </section>
+
+    <script src="./js/script.js" defer></script>
+  </body>
+</html>

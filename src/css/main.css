@@ -1,0 +1,185 @@
+@font-face {
+  font-family: 'Cadiz';
+  src: url(../fonts/Cadiz-Light.eot);
+  src: url(../fonts/Cadiz-Light.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/Cadiz-Light.otf) format('otf'),
+       url(../fonts/Cadiz-Light.ttf) format('truetype'),
+       url(../fonts/Cadiz-Light.woff) format('woff'),
+       url(../fonts/Cadiz-Light.woff2) format('woff2');
+  font-weight: 300;
+  font-style: light;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cadiz';
+  src: url(../fonts/Cadiz-Book.eot);
+  src: url(../fonts/Cadiz-Book.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/Cadiz-Book.otf) format('otf'),
+       url(../fonts/Cadiz-Book.svg#Cadiz-Book) format('svg'),
+       url(../fonts/Cadiz-Book.ttf) format('truetype'),
+       url(../fonts/Cadiz-Book.woff) format('woff'),
+       url(../fonts/Cadiz-Book.woff2) format('woff2');
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cadiz';
+  src: url(../fonts/Cadiz-Bold.eot);
+  src: url(../fonts/Cadiz-Bold.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/Cadiz-Bold.otf) format('otf'),
+       url(../fonts/Cadiz-Bold.svg#Cadiz-Bold) format('svg'),
+       url(../fonts/Cadiz-Bold.ttf) format('truetype'),
+       url(../fonts/Cadiz-Bold.woff) format('woff'),
+       url(../fonts/Cadiz-Bold.woff2) format('woff2');
+  font-weight: 800;
+  font-style: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cadiz';
+  src: url(../fonts/Cadiz-Black.eot);
+  src: url(../fonts/Cadiz-Black.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/Cadiz-Black.otf) format('otf'),
+       url(../fonts/Cadiz-Black.svg#Cadiz-Black) format('svg'),
+       url(../fonts/Cadiz-Black.ttf) format('truetype'),
+       url(../fonts/Cadiz-Black.woff) format('woff'),
+       url(../fonts/Cadiz-Black.woff2) format('woff2');
+  font-weight: 900;
+  font-style: black;
+  font-display: swap;
+}
+
+@config "../../tailwind.config.js";
+
+@tailwind base;
+
+body,
+html {
+  font-size: 16px;
+  @apply font-sans font-normal;
+}
+h1, h2, h3, h4, h5, h6{
+  @apply font-sans font-semibold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  
+  scrollbar-width: thin;
+  scrollbar-color: #FB258D #081831;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #081831;
+  border-radius: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #FB258D;
+  border-radius: 10px;
+  border: 3px solid #081831;
+}
+
+a, a:link, a:hover, a:visited, a:active{
+  @apply cursor-pointer text-white;
+}
+a.unavailable:link, a.unavailable:hover, a.unavailable:visited, a.unavailable:active{
+  @apply text-slate-500;
+}
+
+.logo{
+  @apply w-40 md:w-44;
+}
+
+p strong{
+  @apply font-bold;
+}
+footer a{
+  @apply hover:text-darkpink cursor-pointer;
+}
+
+ul.checklist{
+  list-style: none; 
+  list-style-position: inside;
+
+  @apply flex flex-col pb-10;
+
+  li {
+    background: url('../images/check_gradient.svg') no-repeat top left;
+    padding: 0px 0px 3px 35px;
+    @apply pb-5;
+  }
+}
+
+.lazy{
+  @apply opacity-0;
+}
+.lazyobject{
+  @apply opacity-0 -translate-y-2;
+}
+.lazyloaded{
+  @apply opacity-100 translate-y-0;
+}
+
+@tailwind components;
+
+.cta-btn {
+    @apply shadow-xl text-white hover:text-white font-black py-4 md:font-black uppercase px-0 md:px-8 rounded text-2xl lg:text-3xl cursor-pointer
+      text-center justify-center items-center leading-10 
+      hover:shadow-2xl flex active:shadow-sm transition-all
+      select-none overflow-hidden z-10;
+}
+
+.cta-btn.gradient {
+    @apply bg-gradient-to-r from-orange to-pink-600;
+
+    &:hover{
+        &:after{
+          @apply opacity-100;
+        }
+      }
+
+      &:after{
+        content: '';
+        @apply flex absolute w-full h-full bg-gradient-to-r from-pink-600 to-orange opacity-0 transition-opacity duration-200 pointer-events-none z-0;
+      }
+}
+
+.cta-btn.white {
+    @apply bg-transparent border-4 border-white hover:border-transparent backdrop-blur-lg;
+    &:before{
+      content: '';
+      @apply flex absolute w-full h-full pointer-events-none z-0;
+    }
+
+    &:hover, &:active{
+      &:after{
+        @apply opacity-100
+      }
+    }
+
+    &:after{
+      content: '';
+      @apply flex absolute w-full h-full bg-gradient-to-r from-pink-600 to-orange opacity-0 transition-opacity duration-200 pointer-events-none z-0;
+    }
+}
+
+
+.text-gradient{
+  @apply text-transparent bg-clip-text bg-gradient-to-l from-primary to-secondary;
+}
+
+@tailwind utilities;
